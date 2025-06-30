@@ -1,0 +1,51 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GPT Chat Logger",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "logChatToSheet",
+        "summary": "Log GPT chat to Google Sheets via webhook",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogChat"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LogChat": {
+        "type": "object",
+        "properties": {
+          "userMessage": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          }
+        },
+        "required": ["userMessage", "sessionId"]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://hook.us2.make.com/bpezkvxgk99t26s3w9uhfy9coxzs99nc"
+    }
+  ]
+}
