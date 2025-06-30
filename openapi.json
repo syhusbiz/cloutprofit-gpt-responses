@@ -5,7 +5,7 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/log": {
+    "/": {
       "post": {
         "operationId": "logChatToSheet",
         "summary": "Log GPT chat to Google Sheets via webhook",
@@ -48,7 +48,8 @@
   },
   "servers": [
     {
-      "url": "https://hook.us2.make.com/bpezkvxgk99t26s3w9uhfy9coxzs99nc/log"
+      "url": "https://hook.us2.make.com/bpezkvxgk99t26s3w9uhfy9coxzs99nc"
     }
   ]
 }
+
